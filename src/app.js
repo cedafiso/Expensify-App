@@ -11,15 +11,11 @@ import '../node_modules/normalize.css/normalize.css'
 import './estilos/estilo.scss';
 
 const store = configureStore();
-store.subscribe(() => {
-    const state = store.getState();
-    const visibleExpenses = expenses(state.expenses , state.filters)
-    console.log(visibleExpenses);
-});
 
 store.dispatch(actionsExpenses.addExpense({description: 'Water bill', amount: '1000'}));
 store.dispatch(actionsExpenses.addExpense({description: 'Gas bill', amount: '200'}));
-store.dispatch(actionsFilters.setTextFilter('Water'));
+store.dispatch(actionsExpenses.addExpense({description: 'Rent', amount: '100000', createdAt: 1000}));
+
 
 const jsx = (
     <Provider store={store}>
