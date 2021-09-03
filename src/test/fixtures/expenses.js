@@ -5,21 +5,21 @@ export const state = [
         description: 'rent',
         amount: 1000,
         note: 'apt',
-        createdAt: moment().valueOf()
+        createdAt: 0
     },
     {
         id: '2',
         description: 'Water bill',
         amount: 8000,
         note: 'apt',
-        createdAt: moment().add(4, 'days').valueOf()
+        createdAt: 10000
     },
     {
         id: '3',
         description: 'Gas bill',
         amount: 500,
         note: 'apt',
-        createdAt: moment().subtract(4, 'days').valueOf()
+        createdAt: -10000
     }
 ];
 
@@ -28,5 +28,5 @@ export const stateEdit = [{
     description: 'Agua bill',
     amount: 8000,
     note: 'apt',
-    createdAt: state[1].createdAt
+    createdAt: 10000
 }]

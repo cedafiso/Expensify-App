@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`It should render an item of the item list expenses 1`] = `
+<div>
+  <p>
+    Description: 
+    Water bill
+  </p>
+  <p>
+    Amount:
+    8000
+  </p>
+  <p>
+    Create at: 
+    10000
+  </p>
+  <button
+    onClick={[Function]}
+  >
+    Remove
+  </button>
+  <Link
+    to="/edit/2"
+  >
+    <button>
+      Edit
+    </button>
+  </Link>
+</div>
+`;

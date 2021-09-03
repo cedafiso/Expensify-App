@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render an instance of ExpenseList 1`] = `
+<div>
+  <h1>
+    Expense List:
+  </h1>
+  <Connect(ExpenseListItem)
+    amount={1000}
+    createdAt={0}
+    description="rent"
+    id="1"
+    key="1"
+    note="apt"
+  />
+  <Connect(ExpenseListItem)
+    amount={8000}
+    createdAt={10000}
+    description="Water bill"
+    id="2"
+    key="2"
+    note="apt"
+  />
+  <Connect(ExpenseListItem)
+    amount={500}
+    createdAt={-10000}
+    description="Gas bill"
+    id="3"
+    key="3"
+    note="apt"
+  />
+</div>
+`;
+
+exports[`Should render an instance of ExpenseList with empty sign 1`] = `
+<div>
+  <h1>
+    Expense List:
+  </h1>
+  <p>
+    Empty
+  </p>
+</div>
+`;

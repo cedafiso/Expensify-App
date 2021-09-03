@@ -1,12 +1,13 @@
 import React from 'react';
 import Header from '../../componentes/Header';
 import {shallow} from 'enzyme';
-import ReactShallowRenderer from 'react-test-renderer/shallow';
 import { expect } from '@jest/globals';
 
 test('Should render Header' , () => {
     const wrapper = shallow(<Header />);
-    expect(wrapper.find('h1').length).toBe(1);
+    expect(wrapper).toMatchSnapshot();
+
+    // expect(wrapper.find('h1').text()).toBe('Expensify-App');
     // const renderer = new ReactShallowRenderer();
     // renderer.render(<Header />);
     // console.log(renderer.getRenderOutput());
