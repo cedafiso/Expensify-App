@@ -5,7 +5,12 @@ module.exports = merge(common, {
 mode: 'development',
 devtool: 'inline-source-map',
 devServer: {
-    static: './public',
-    historyApiFallback:true
-},
-});
+    // static: path.join(__dirname, 'public'),
+    // publicPath: '/dist/',
+    historyApiFallback: true,
+    static: {
+        directory: path.join(__dirname, 'public'),
+        publicPath: "/dist"
+      },
+
+}});

@@ -6,13 +6,12 @@
   "author": "cedafiso <cedafiso@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "serve": "live-server public/",
     "build:dev": "webpack",
     "build:prod": "webpack --config webpack.prod.js",
     "dev-server": "webpack serve --open --config webpack.dev.js",
     "start": "node server/server.js",
     "test": "jest --config=jest.config.json",
-    "heroku-postbuild":"yarn run build:prod"
+    "heroku-postbuild": "yarn run build:prod"
   },
   "dependencies": {
     "@babel/cli": "^7.14.8",
@@ -22,13 +21,8 @@
     "babel-loader": "^8.2.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "css-loader": "^6.2.0",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.6",
-    "enzyme-to-json": "^3.6.2",
     "express": "^4.17.1",
     "html-webpack-plugin": "^5.3.2",
-    "jest": "^27.1.0",
-    "live-server": "^1.2.1",
     "mini-css-extract-plugin": "^2.2.2",
     "moment": "^2.29.1",
     "node-sass": "^6.0.1",
@@ -42,7 +36,6 @@
     "react-modal": "^3.14.3",
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
-    "react-test-renderer": "^17.0.2",
     "redux": "^4.1.1",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.2.1",
@@ -53,6 +46,11 @@
     "webpack-merge": "^5.8.0"
   },
   "devDependencies": {
-    "webpack-dev-server": "^4.0.0"
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "enzyme-to-json": "^3.6.2",
+    "jest": "^27.1.0",
+    "react-test-renderer": "^17.0.2",
+    "webpack-dev-server": "^4.1.0"
   }
 }
