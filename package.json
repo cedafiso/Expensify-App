@@ -7,8 +7,9 @@
   "license": "MIT",
   "scripts": {
     "serve": "live-server public/",
-    "build": "webpack",
-    "start": "webpack serve",
+    "build:dev": "webpack",
+    "build:prod": "webpack --config webpack.prod.js",
+    "start": "webpack serve --open --config webpack.dev.js",
     "test": "jest --config=jest.config.json"
   },
   "dependencies": {
@@ -22,8 +23,10 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "enzyme-to-json": "^3.6.2",
+    "html-webpack-plugin": "^5.3.2",
     "jest": "^27.1.0",
     "live-server": "^1.2.1",
+    "mini-css-extract-plugin": "^2.2.2",
     "moment": "^2.29.1",
     "node-sass": "^6.0.1",
     "normalize": "^0.3.1",
@@ -43,7 +46,8 @@
     "uuid": "^8.3.2",
     "validator": "^13.6.0",
     "webpack": "^5.51.1",
-    "webpack-cli": "^4.8.0"
+    "webpack-cli": "^4.8.0",
+    "webpack-merge": "^5.8.0"
   },
   "devDependencies": {
     "webpack-dev-server": "^4.0.0"

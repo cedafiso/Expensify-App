@@ -4,11 +4,13 @@ import { Provider } from 'react-redux';
 import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import *  as actionsExpenses from './actions/expenses';
-import * as actionsFilters from './actions/filters';
-import expenses from './selectors/expenses';
-import './estilos/base/_setting.scss';
 import '../node_modules/normalize.css/normalize.css'
 import './estilos/estilo.scss';
+import 'react-dates/lib/css/_datepicker.css';
+
+if (process.env.NODE_ENV !== 'production') {
+    console.log('Looks like we are in development mode!');
+    }
 
 const store = configureStore();
 
