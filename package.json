@@ -12,7 +12,7 @@
     "dev-server": "webpack serve --open --config webpack.dev.js",
     "start": "node server/server.js",
     "test": "jest --config=jest.config.json",
-    "heroku-postbuild":"yarn run build:prod "
+    "heroku-postbuild":"yarn run build:prod"
   },
   "dependencies": {
     "@babel/cli": "^7.14.8",
