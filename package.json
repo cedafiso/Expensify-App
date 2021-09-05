@@ -6,9 +6,8 @@
   "author": "cedafiso <cedafiso@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build:dev": "webpack",
+    "build:dev": "webpack serve --open --config webpack.dev.js",
     "build:prod": "webpack --config webpack.prod.js",
-    "dev-server": "webpack serve --open --config webpack.dev.js",
     "start": "node server/server.js",
     "test": "jest --config=jest.config.json",
     "heroku-postbuild": "yarn run build:prod"
