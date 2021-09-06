@@ -6,6 +6,7 @@ import configureStore from './store/configureStore';
 import *  as actionsExpenses from './actions/expenses';
 import '../node_modules/normalize.css/normalize.css'
 import './estilos/estilo.scss';
+import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 
 if (process.env.NODE_ENV !== 'production') {
