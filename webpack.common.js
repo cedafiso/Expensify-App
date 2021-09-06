@@ -4,6 +4,6 @@ module.exports = {
     output: {
         path: path.join(__dirname, '/public','dist'),
         filename: 'bundle.js',
-        publicPath: '/dist',
+        publicPath: '/',
     },
 };

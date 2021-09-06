@@ -23,7 +23,7 @@ module.exports = merge(common, {
       // static: path.join(__dirname, 'public'),
       static: {
           directory: path.join(__dirname, 'public'),
-          publicPath: '/dist',
+          publicPath: '/',
         },
       historyApiFallback: true,
 }});
