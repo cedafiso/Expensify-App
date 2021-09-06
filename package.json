@@ -6,7 +6,7 @@
   "author": "cedafiso <cedafiso@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build:dev": "webpack serve --open --config webpack.dev.js",
+    "build:dev": "webpack serve --open --config webpack.dev.js --hot",
     "build:prod": "webpack --config webpack.prod.js",
     "start": "node server/server.js",
     "test": "jest --config=jest.config.json",
@@ -27,6 +27,7 @@
     "node-sass": "^6.0.1",
     "normalize": "^0.3.1",
     "normalize.css": "^8.0.1",
+    "numeral": "^2.0.6",
     "raf": "3.3.2",
     "react": "^16.14.0",
     "react-addons-shallow-compare": "^15.6.3",
