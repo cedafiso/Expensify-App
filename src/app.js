@@ -8,6 +8,7 @@ import '../node_modules/normalize.css/normalize.css'
 import './estilos/estilo.scss';
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
+import './firebase/firebase';
 
 if (process.env.NODE_ENV !== 'production') {
     console.log('Looks like we are in development mode!');
