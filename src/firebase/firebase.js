@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref ,set, remove,  onValue} from "firebase/database";
+import * as firebase from "firebase/database";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDiGy88cnRardAuiG3X8lgU5i3DlCv-DTY",
@@ -16,22 +17,25 @@ const app = initializeApp(firebaseConfig);
 
 const database = getDatabase();
 
-set(ref(database), {
-    name:'Cesar Figueroa',
-    isSingle: false,
-    location: {
-        contry: 'Canada',
-        city: 'Vancouver'
-    }
-}).then(() => {
-    console.log('Data is saved');
-}).catch((e) => {
-    console.log('This failed', e);
-});
 
-set(ref(database, 'age'), 29);
+export { firebase, database as default};
 
-set(ref(database, 'location/city'), 'Burnaby');
+// set(ref(database), {
+//     name:'Cesar Figueroa',
+//     isSingle: false,
+//     location: {
+//         contry: 'Canada',
+//         city: 'Vancouver'
+//     }
+// }).then(() => {
+//     console.log('Data is saved');
+// }).catch((e) => {
+//     console.log('This failed', e);
+// });
+
+// set(ref(database, 'age'), 29);
+
+// set(ref(database, 'location/city'), 'Burnaby');
 
 // remove(ref(database, 'isSingle')).then(() => {
 //     console.log('Sucefully removed');
@@ -40,9 +44,9 @@ set(ref(database, 'location/city'), 'Burnaby');
 // });
 
 
-onValue(ref(database, 'age'), (snapshot)=> {
-    console.log(snapshot.val());
-})
+// onValue(ref(database, 'age'), (snapshot)=> {
+//     console.log(snapshot.val());
+// })
 
 // set(ref(database, 'age'),null ).then(() => {
 //     console.log('Sucefully erased');

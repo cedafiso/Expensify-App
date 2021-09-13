@@ -21,7 +21,7 @@ class ExpenseListFilter extends React.Component{
                 type='text' 
                 value={this.props.filters.text} 
                 onChange={(e)=>{
-                    return props.dispatch(setTextFilter(e.target.value))
+                    return this.props.dispatch(setTextFilter(e.target.value))
                     }}>
     
                 </input>

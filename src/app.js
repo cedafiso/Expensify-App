@@ -16,9 +16,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 const store = configureStore();
 
-store.dispatch(actionsExpenses.addExpense({description: 'Water bill', amount: '1000'}));
-store.dispatch(actionsExpenses.addExpense({description: 'Gas bill', amount: '200'}));
-store.dispatch(actionsExpenses.addExpense({description: 'Rent', amount: '100000', createdAt: 1000}));
+store.dispatch(actionsExpenses.startSetExpenses());
 
 
 const jsx = (
