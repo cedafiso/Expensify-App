@@ -1,18 +1,16 @@
 import React from 'react';
 import ExpenseForm from './ExpenseForm';
 import {connect} from 'react-redux';
-import {editExpense} from '../actions/expenses';
-import {useParams} from 'react-router-dom';
+import {startEditExpense} from '../actions/expenses';
 
 const EditExpensePage = (props) => {
-    console.log(props.expenses);
     return (
         <div>
-            <p>Expensify-App-Edit {props.match.params.id}</p>
+            <p>Expensify-App-Edit</p>
             <ExpenseForm
                 expense={props.expenses}
                 onSubmit={(expenses) => {
-                props.dispatch(editExpense(props.match.params.id, expenses));
+                props.dispatch(startEditExpense(props.match.params.id, expenses));
                 props.history.push('/');
             }
                 }/>
