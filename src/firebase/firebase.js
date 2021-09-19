@@ -1,6 +1,8 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref ,set, remove,  onValue} from "firebase/database";
 import * as firebase from "firebase/database";
+import * as firebaseAuth from "firebase/auth";
+import { GoogleAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDiGy88cnRardAuiG3X8lgU5i3DlCv-DTY",
@@ -13,12 +15,14 @@ const firebaseConfig = {
     measurementId: "G-D7ZN4EZLF2"
 };
 
+const googleProvider = new GoogleAuthProvider();
+
 const app = initializeApp(firebaseConfig);
 
 const database = getDatabase();
 
 
-export { firebase, database as default};
+export { googleProvider , firebase , firebaseAuth,database as default};
 
 // set(ref(database), {
 //     name:'Cesar Figueroa',

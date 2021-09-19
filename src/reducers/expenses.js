@@ -18,6 +18,8 @@ const expensesReducer = (state = expensesReducerDefaultState, action) => {
             })
         case 'SET_EXPENSES':
             return state.concat(action.expenses)
+        case 'RESET':
+            return []
         default:
             return state;
     }

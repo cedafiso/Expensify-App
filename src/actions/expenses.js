@@ -15,13 +15,13 @@ export const addExpense = ({ description = '', note = '', amount = 0, createdAt 
     }
 });
 export const startAddExpense = (expenseData = {}) => {
-    return (dispatch) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
         const {
             description = '', note = '', amount = 0, createdAt = 0
         } = expenseData;
         const expense = {description, note,amount,createdAt}
-        firebase.push(ref(database, 'expenses'), expense).then((ref) => {
-            console.log(ref.key);
+        firebase.push(ref(database, 'users/'+ uid +'/expenses'), expense).then((ref) => {
             dispatch(addExpense(
                 Object.assign(expense, {id: ref.key})
             ));
@@ -34,9 +34,10 @@ export const removeExpense = ({ id }={}) => ({
 });
 
 export const startRemoveExpense = (expenseData) => {
-    return (dispatch) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
         const {id} = expenseData;
-        remove(ref(database, `expenses/${id}`)).
+        remove(ref(database, `users/${uid}/expenses/${id}`)).
         then(() => {
             console.log('Sucefully remove');
         }).
@@ -48,12 +49,13 @@ export const startRemoveExpense = (expenseData) => {
 };
 
 export const startEditExpense = (id, expense) => {
-    return (dispatch) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
         const {
             description = '', note = '', amount = 0, createdAt = 0
         } = expense;
         const updates = {description, note, amount, createdAt};
-        update(ref(database, 'expenses/'+ id), updates);
+        update(ref(database, 'users/'+uid+'/expenses/'+ id), updates);
         dispatch(editExpense(id, expense));
     };
 
@@ -71,14 +73,20 @@ export const setExpenses = (expenses) => ({
 });
 
 export const startSetExpenses = () => {
-    return (dispatch) => {
-        const expense = [];
-        firebase.get(firebase.child(firebase.ref(database),'expenses')).
-        then((snapshot) => {
-            snapshot.forEach((childSnapshot) => {
-                expense.push(Object.assign(childSnapshot.val(), {id:childSnapshot.key}));
-            })
-            dispatch(setExpenses(expense));
-        })
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
+        return firebase.get(firebase.child(firebase.ref(database), 'users/'+ uid +'/expenses')).
+                then((snapshot) => {
+                    const expense = [];
+                    snapshot.forEach((childSnapshot) => {
+                    expense.push(Object.assign({}, childSnapshot.val(), {id:childSnapshot.key}));
+                    });
+                    console.log(expense);
+                    dispatch(setExpenses(expense));
+                });
     }
 };
+
+export const resetExpenses = () => ({
+    type: 'RESET'
+});
