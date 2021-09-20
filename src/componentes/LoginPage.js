@@ -7,7 +7,7 @@ const LoginPage = ({startLogin}) => {
         <div className="box-layout">
             <div className="box-layout__box">
                 <h1 className="box-layout__tittle">Expensify</h1>
-                <p>Not yet</p>
+                <p>Take control of your expenses</p>
                 <button className="button" onClick={startLogin}>
                     Login with Google
                 </button>

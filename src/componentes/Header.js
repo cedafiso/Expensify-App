@@ -7,7 +7,7 @@ const Header = ({startLogOut}) => {
         <header className="header">
             <div className="content-container">
                 <div className="header__content">
-                    <Link className="header__tittle" to="/dashboard" exact={true}>
+                    <Link className="header__tittle" to="/dashboard">
                         <h1>Expensify-App</h1>
                     </Link>
                     <button className="button button--logout"onClick={startLogOut}>Log out</button>

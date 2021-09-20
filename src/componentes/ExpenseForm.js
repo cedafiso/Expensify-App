@@ -86,7 +86,7 @@ export default class ExpenseForm extends React.Component {
                     onChange={this.onNoteChange}
                     />
                     <div>
-                        <button>Submit</button>
+                        <button className="button">Submit</button>
                     </div>
                 </form>
         )
