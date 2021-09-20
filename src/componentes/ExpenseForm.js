@@ -45,7 +45,7 @@ export default class ExpenseForm extends React.Component {
         if(!this.state.amount || !this.state.description){
             this.setState(() => ({error: 'Please provide description and amount'}));
         }else{
-           this.setState(() => {error:''});
+           this.setState(() => ({error:''}));
            this.props.onSubmit({
                description: this.state.description,
                amount: parseFloat(this.state.amount, 10)*100 ,
@@ -56,16 +56,17 @@ export default class ExpenseForm extends React.Component {
     };
     render(){
         return (
-            <div>
-                <form onSubmit={this.onSubmit}>
-                    {this.state.error && <p>{this.state.error}</p>}
+                <form className="form" onSubmit={this.onSubmit}>
+                    {this.state.error && <p className="form__error">{this.state.error}</p>}
                     <input 
+                    className="text-input"
                     type='text'
                     placerholder='Description'
                     value={this.state.description}
                     onChange={this.onDescriptionChange}
                     autoFocus/>
                     <input 
+                    className="text-input"
                     type='text'
                     placeholder='Amount'
                     value={this.state.amount}
@@ -79,13 +80,15 @@ export default class ExpenseForm extends React.Component {
                     onFocusChange={this.onFocusChange}
                     />
                     <textarea 
+                    className="text-area"
                     placeholder="Add a note for your expense (optional)"
                     value={this.state.note}
                     onChange={this.onNoteChange}
                     />
-                    <button>Submit</button>
+                    <div>
+                        <button>Submit</button>
+                    </div>
                 </form>
-            </div>
         )
     }
 

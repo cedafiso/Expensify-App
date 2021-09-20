@@ -6,13 +6,19 @@ import {startAddExpense} from '../actions/expenses';
 const AddExpensePage = (props) => {
     return (
         <div>
-            <p>Expensify-App-Add</p>
-            <ExpenseForm 
-            onSubmit={(expenses) => {
-                props.dispatch(startAddExpense(expenses));
-                props.history.push('/');
-            }}
-            />
+            <div className="page-header">
+                <div className="content-container">
+                    <h1 className="page-header__tittle">Add expense</h1>
+                </div>
+            </div>
+            <div className="content-container">
+                <ExpenseForm 
+                onSubmit={(expenses) => {
+                    props.dispatch(startAddExpense(expenses));
+                    props.history.push('/');
+                }}
+                />
+            </div>
         </div>
     );
 }
